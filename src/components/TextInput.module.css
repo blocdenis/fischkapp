@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  flex-shrink: 0;
+  width: 315px;
+  max-width: 315px;
+  min-height: 40px;
+  border: 1px solid var(--border);
+  padding: 10px;
+}
+
+.textarea {
+  overflow-wrap: break-word;
+  width: 100%;
+  min-height: 40px;
+  line-break: after-white-space;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+[contenteditable] {
+  outline: 1px solid transparent;
+}
