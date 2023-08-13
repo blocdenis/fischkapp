@@ -17,9 +17,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src",
-    "src/components/AuthenticatedRoute/AuthenticatedRoute.tsx"
-  ],
+  "include": ["src", "src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,4 +1,28 @@
 .header {
   height: 60px;
+  padding: 16px;
   background: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12.18px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 32px;
+  background-color: var(--accent);
+  cursor: pointer;
+  padding: 8px 12px;
 }
