@@ -1,0 +1,22 @@
+.btn {
+  width: 110px;
+  display: flex;
+  padding: 10px 12px;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 22px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+}
+.vite {
+  background-color: var(--white);
+  color: var(--accent);
+}
+.accent {
+  background-color: var(--accent);
+  color: var(--white);
+}
