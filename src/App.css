@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
 body {
   background: #373737;
+}
+
+:root {
+  --white: #fff;
+  --background: #f1f2f3;
+  --accent: #161616;
+  --typo: #b6b6b6;
+  --border: #ebebec;
 }
