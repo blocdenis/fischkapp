@@ -14,9 +14,9 @@ interface CardListProps {
 
 const CardListLayout: FC<CardListProps> = ({ cards }): ReactElement => {
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardsContainer}>
       {cards.map((cards) => (
-        <Card key={cards.id} question={cards.question} anwser={cards.answer} />
+        <Card key={cards.id} question={cards.question} answer={cards.answer} />
       ))}
     </div>
   )

@@ -3,10 +3,10 @@ import styles from './Card.module.css'
 import editIcon from '@images/EditButton.svg'
 interface CardProps {
   question: string
-  anwser: string
+  answer: string
 }
 
-const Card: FC<CardProps> = ({ question, anwser }) => {
+const Card: FC<CardProps> = ({ question, answer }) => {
   const [isFliped, setIsFliped] = useState<boolean>(true)
   return (
     <div>
@@ -18,7 +18,7 @@ const Card: FC<CardProps> = ({ question, anwser }) => {
           {question}
         </div>
       ) : (
-        <div className={styles.card}>{anwser}</div>
+        <div className={styles.card}>{answer}</div>
       )}
     </div>
   )
