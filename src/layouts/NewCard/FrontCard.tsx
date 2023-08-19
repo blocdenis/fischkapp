@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
-import Button from './Button'
-import TextInput from './TextInput'
+import Button from '../../components/Button/Button'
+import TextInput from '../../components/TextInput/TextInput'
 import styles from './NewCard.module.css'
 
 export const FrontCard = (): ReactElement => {

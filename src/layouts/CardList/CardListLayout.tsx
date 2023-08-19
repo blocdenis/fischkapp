@@ -1,6 +1,6 @@
 import React, { ReactElement, FC } from 'react'
 import styles from './CardListLayout.module.css'
-import Card from './Card'
+import Card from '../Card/Card'
 
 interface CardData {
   id: number

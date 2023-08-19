@@ -1,10 +1,10 @@
-import { AppHeader } from './components/AppHeader'
-import { AppLayout } from './components/AppLayout'
+import { AppHeader } from './layouts/AppHeader/AppHeader'
+import { AppLayout } from './layouts/AppLayout/AppLayout'
 import './App.css'
 // import NewCard from './components/NewCard'
-import Card from './components/Card'
+import Card from './layouts/Card/Card'
 import { ReactElement } from 'react'
-import CardListLayout from './components/CardListLayout'
+import CardListLayout from './layouts/CardList/CardListLayout'
 
 function App(): ReactElement {
   const cards = [

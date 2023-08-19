@@ -7,7 +7,8 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ question, answer }) => {
-  const [isFliped, setIsFliped] = useState<boolean>(true)
+  const [isFliped, setIsFliped] = useState<boolean>(false)
+  const [isEdited, setIsEdited] = useState<boolean>(false)
   return (
     <div>
       {isFliped ? (
@@ -18,7 +19,12 @@ const Card: FC<CardProps> = ({ question, answer }) => {
           {question}
         </div>
       ) : (
-        <div className={styles.card}>{answer}</div>
+        <div className={styles.card}>
+          {answer}
+          <button className={styles.editBtn}>
+            <img src={editIcon} alt="Edit button icon" />
+          </button>
+        </div>
       )}
     </div>
   )
