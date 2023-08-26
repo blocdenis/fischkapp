@@ -9,4 +9,7 @@
   flex-shrink: 0;
   background: none;
   border: none;
+  top: 0;
+  cursor: pointer;
+  background: transparent;
 }
