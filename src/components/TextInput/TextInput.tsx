@@ -5,13 +5,13 @@ interface TextProps {
   style?: CSSProperties
 }
 const TextInput = (props: TextProps): ReactElement => {
-  const inputRef = useRef<null | HTMLSpanElement>(null)
+  const inputRef = useRef<null | HTMLTextAreaElement>(null)
   useEffect(() => {
     inputRef?.current?.focus()
   }, [])
   return (
     <div className={styles.container} style={props.style}>
-      <span className={styles.textarea} contentEditable ref={inputRef}></span>
+      <textarea className={styles.textarea} rows={1} ref={inputRef}></textarea>
     </div>
   )
 }
