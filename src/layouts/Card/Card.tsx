@@ -15,7 +15,7 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ question, answer }) => {
   const [isFliped, setIsFliped] = useState<boolean>(false)
-  const [isEdited, setIsEdited] = useState<boolean>(false)
+  const [isEdited, setIsEdited] = useState<boolean>(true)
 
   const handleEdit = () => {
     setIsEdited((prev) => !prev)
@@ -27,7 +27,7 @@ const Card: FC<CardProps> = ({ question, answer }) => {
   }
   return (
     <div className={styles.card}>
-      {!isEdited ? (
+      {isEdited ? (
         <div
           className={`${styles.defaultCardWrapper} ${
             isFliped ? styles.flip : ''

@@ -16,8 +16,9 @@
   color: var(--accent);
   font-size: 16px;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 19px;
   resize: none;
   border: none;
   outline: 0px solid transparent;
+  padding: 10px;
 }
