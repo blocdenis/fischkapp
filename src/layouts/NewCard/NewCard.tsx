@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FrontCard } from './FrontCard'
 import { BackCard } from './BackCard'
 import styles from './NewCard.module.css'
-const NewCard = () => {
+
+interface NewCardProps {
+  onCancel: (e: React.MouseEvent) => void
+}
+const NewCard = ({ onCancel }: NewCardProps) => {
+  const [isFlip, setIsFliped] = useState<boolean>(false)
+
+  const handleFlip = () => {
+    setIsFliped((prev) => !prev)
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.wrapper}>
-        <FrontCard />
-        <BackCard />
+        {!isFlip ? <FrontCard onCancel={onCancel} /> : <BackCard />}
       </div>
     </div>
   )

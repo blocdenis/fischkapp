@@ -35,12 +35,16 @@ function App(): ReactElement {
   const handleAddCard = () => {
     setIsAdded((prev) => !prev)
   }
+  const handleCancel = () => {
+    setIsAdded(false)
+    console.log('cancel')
+  }
 
   return (
     <AppLayout>
       <AppHeader cardsQty={cards.length} onClick={handleAddCard} />
       {/* <CardListLayout cards={cards} /> */}
-      {isAdded && <NewCard />}
+      {isAdded && <NewCard onCancel={handleCancel} />}
     </AppLayout>
   )
 }
