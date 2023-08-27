@@ -5,6 +5,7 @@ import styles from './NewCard.module.css'
 
 interface NewCardProps {
   onCancel: (e: React.MouseEvent) => void
+  // onClick: (e: React.MouseEvent) => void
 }
 const NewCard = ({ onCancel }: NewCardProps) => {
   const [isFlip, setIsFliped] = useState<boolean>(false)
@@ -12,11 +13,14 @@ const NewCard = ({ onCancel }: NewCardProps) => {
   const handleFlip = () => {
     setIsFliped((prev) => !prev)
   }
-
   return (
     <div className={styles.card}>
       <div className={styles.wrapper}>
-        {!isFlip ? <FrontCard onCancel={onCancel} /> : <BackCard />}
+        {!isFlip ? (
+          <FrontCard onCancel={onCancel} handleFlip={handleFlip} />
+        ) : (
+          <BackCard />
+        )}
       </div>
     </div>
   )

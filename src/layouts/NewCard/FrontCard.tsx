@@ -5,8 +5,12 @@ import styles from './NewCard.module.css'
 
 interface FrontCard {
   onCancel: (e: React.MouseEvent) => void
+  handleFlip: (e: React.MouseEvent) => void
 }
-export const FrontCard = ({ onCancel }: FrontCard): ReactElement => {
+export const FrontCard = ({
+  onCancel,
+  handleFlip,
+}: FrontCard): ReactElement => {
   return (
     <div className={styles.cardFace}>
       <TextInput style={{ marginTop: '50px', marginBottom: '24px' }} />
@@ -15,7 +19,10 @@ export const FrontCard = ({ onCancel }: FrontCard): ReactElement => {
           {' '}
           Cancel
         </Button>
-        <Button color="accent"> Next</Button>
+        <Button color="accent" onClick={handleFlip}>
+          {' '}
+          Next
+        </Button>
       </div>
     </div>
   )
