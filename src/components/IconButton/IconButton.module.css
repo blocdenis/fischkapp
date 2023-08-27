@@ -1,0 +1,15 @@
+.icon {
+  position: absolute;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  top: 0;
+  cursor: pointer;
+  background: transparent;
+}

@@ -43,9 +43,8 @@
   background: var(--white);
   padding: 0 14px 14px 14px;
 }
-
 .deleteBtn {
-  position: absolute;
+  /* position: absolute;
   display: flex;
   width: 40px;
   height: 40px;
@@ -54,5 +53,13 @@
   align-items: center;
   flex-shrink: 0;
   background: none;
+  border: none; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: none;
   border: none;
+  cursor: pointer;
 }

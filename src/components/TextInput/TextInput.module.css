@@ -3,7 +3,7 @@
   flex-shrink: 0;
   width: 315px;
   max-width: 315px;
-  min-height: 40px;
+  min-height: 16px;
   border: 1px solid var(--border);
   padding: 10px;
 }
@@ -16,8 +16,9 @@
   color: var(--accent);
   font-size: 16px;
   font-weight: 500;
-}
-
-[contenteditable] {
-  outline: 1px solid transparent;
+  line-height: 19px;
+  resize: none;
+  border: none;
+  outline: 0px solid transparent;
+  padding: 10px;
 }
