@@ -3,20 +3,19 @@ import styles from './AppHeader.module.css'
 import MainLogo from '@images/MainLogo.svg'
 import AddNewLogo from '@images/AddNew.svg'
 
-export const AppHeader = () => {
-  // const [cards, setCards] = useState<number>(0)
-
-  // const handleAddNewCard = () => {
-  //   setCards((previous) => previous + 1)
-  // }
+interface AppHeaderProps {
+  onClick: (e: React.MouseEvent) => void
+  cardsQty: number
+}
+export const AppHeader = ({ cardsQty, onClick }: AppHeaderProps) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo_wrapper}>
         <img src={MainLogo} alt="logo" />
-        <span>Cards: {0}</span>
+        <span>Cards: {cardsQty}</span>
       </div>
       <div>
-        <button className={styles.btn}>
+        <button className={styles.btn} onClick={onClick}>
           <img src={AddNewLogo} alt="Add_new" />
         </button>
       </div>

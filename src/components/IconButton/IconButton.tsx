@@ -5,7 +5,7 @@ interface IconButtonProps {
   src?: string //set svg as react element
   className?: string
   label?: string
-  setEdit?: (status: boolean) => void
+  setEdit?: (value: boolean) => void
 }
 
 const IconButton: React.FC<IconButtonProps> = ({ src, label, setEdit }) => {
