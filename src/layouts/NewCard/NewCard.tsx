@@ -19,7 +19,7 @@ const NewCard = ({ onCancel }: NewCardProps) => {
         {!isFlip ? (
           <FrontCard onCancel={onCancel} handleFlip={handleFlip} />
         ) : (
-          <BackCard />
+          <BackCard handleFlip={handleFlip} />
         )}
       </div>
     </div>
