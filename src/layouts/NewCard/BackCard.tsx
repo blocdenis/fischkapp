@@ -7,8 +7,12 @@ import { ReactElement } from 'react'
 
 interface BackCardProps {
   handleFlip: (e: React.MouseEvent) => void
+  handleSaveButtonClick: (e: React.MouseEvent) => void
 }
-export const BackCard = ({ handleFlip }: BackCardProps): ReactElement => {
+export const BackCard = ({
+  handleFlip,
+  handleSaveButtonClick,
+}: BackCardProps): ReactElement => {
   return (
     <div className={styles.cardFace}>
       <span className={styles.card_text}>Ii pesce</span>
@@ -16,7 +20,6 @@ export const BackCard = ({ handleFlip }: BackCardProps): ReactElement => {
         className={styles.deleteBtn}
         src={DeleteButton}
         label="delete"
-        // onClick={() => console.log('delete')}
       />
       <TextInput style={{ marginTop: '8px', marginBottom: '24px' }} />
       <div className={styles.buttons}>
@@ -24,7 +27,10 @@ export const BackCard = ({ handleFlip }: BackCardProps): ReactElement => {
           {' '}
           Back
         </Button>
-        <Button color="accent"> Save</Button>
+        <Button color="accent" onClick={handleSaveButtonClick}>
+          {' '}
+          Save
+        </Button>
       </div>
     </div>
   )
