@@ -5,13 +5,19 @@ import EditButton from '@images/EditButton.svg'
 type DefaultCardProps = {
   onEditBtn: () => void
   text: string
-  flip: () => void
+  cardSide: 'front' | 'back'
+  // flip: () => void
 }
-const DefaultCard: React.FC<DefaultCardProps> = ({ flip, onEditBtn, text }) => {
+const DefaultCard: React.FC<DefaultCardProps> = ({
+  cardSide,
+  onEditBtn,
+  text,
+}) => {
   return (
     <div
-      className={`${styles.card} ${text === 'question' ? styles.card : ''}`}
-      onClick={flip}
+      className={`${styles.defaultCardWrapper} ${
+        cardSide === 'front' ? styles.front : styles.back
+      }`}
     >
       <IconButton src={EditButton} setEdit={onEditBtn} />
       <div className={styles.cardContent}>{text}</div>

@@ -52,8 +52,10 @@ function App(): ReactElement {
   return (
     <AppLayout>
       <AppHeader cardsQty={cardsList.length} onClick={handleAddCard} />
-      {/* <CardListLayout cards={cards} /> */}
-      {isAdded && <NewCard onCancel={handleCancel} onSave={handleSave} />}
+      {/* <CardListLayout cardsList={setCardsList} /> */}
+      {/* {isAdded && <NewCard onCancel={handleCancel} onSave={handleSave} />} */}
+      {/* <Card answer="a" question="q" /> */}
+      <Card answer="answer" question="question" />
     </AppLayout>
   )
 }
