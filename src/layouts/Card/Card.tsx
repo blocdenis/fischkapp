@@ -8,7 +8,7 @@ interface CardProps {
   onClick?(): void
 }
 
-const Card2: FC<CardProps> = ({ question, answer }) => {
+const Card: FC<CardProps> = ({ question, answer }) => {
   const [isFliped, setIsFliped] = useState<boolean>(false)
   const [isEdited, setIsEdited] = useState<boolean>(false)
 
@@ -46,4 +46,4 @@ const Card2: FC<CardProps> = ({ question, answer }) => {
     </>
   )
 }
-export default Card2
+export default Card
