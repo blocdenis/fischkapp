@@ -9,31 +9,31 @@ import CardListLayout from './layouts/CardList/CardListLayout'
 export interface Iflashcard {
   question: string
   answer: string
-  id: number
+  id?: number
 }
 function App(): ReactElement {
-  const [cardsList, setCardsList] = useState([
-    {
-      // id: 1,
-      question: 'What is the syntax for declaring a variable in JavaScript?',
-      answer: 'Content for Card 1',
-    },
-    {
-      // id: 2,
-      question: 'How do you write a comment in Javascript?',
-      answer: 'Content for Card 2',
-    },
-    {
-      // id: 3,
-      question:
-        'What is difference between == and === operators in javascript?',
-      answer: 'Content for Card 3',
-    },
-    {
-      // id: 4,
-      question: 'What is an array in JavaScript?',
-      answer: 'Content for Card 4',
-    },
+  const [cardsList, setCardsList] = useState<Iflashcard[]>([
+    // {
+    //   // id: 1,
+    //   question: 'What is the syntax for declaring a variable in JavaScript?',
+    //   answer: 'Content for Card 1',
+    // },
+    // {
+    //   // id: 2,
+    //   question: 'How do you write a comment in Javascript?',
+    //   answer: 'Content for Card 2',
+    // },
+    // {
+    //   // id: 3,
+    //   question:
+    //     'What is difference between == and === operators in javascript?',
+    //   answer: 'Content for Card 3',
+    // },
+    // {
+    //   // id: 4,
+    //   question: 'What is an array in JavaScript?',
+    //   answer: 'Content for Card 4',
+    // },
   ])
   const [isAdded, setIsAdded] = useState<boolean>(false)
   const handleAddCard = () => {
@@ -52,7 +52,7 @@ function App(): ReactElement {
   return (
     <AppLayout>
       <AppHeader cardsQty={cardsList.length} onClick={handleAddCard} />
-      {/* <CardListLayout cards={cards} /> */}
+      <CardListLayout cardsList={cardsList} />
       {isAdded && <NewCard onCancel={handleCancel} onSave={handleSave} />}
     </AppLayout>
   )

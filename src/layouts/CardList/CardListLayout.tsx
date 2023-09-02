@@ -1,24 +1,20 @@
 import React, { ReactElement, FC } from 'react'
 import styles from './CardListLayout.module.css'
 import Card from '../Card/Card'
+import { Iflashcard } from 'App'
 
-interface CardData {
-  id: number
-  question: string
-  answer: string
+interface CardsListComponent {
+  cardsList: Iflashcard[]
 }
-
-interface CardListProps {
-  cards: CardData[]
-}
-
-const CardListLayout: FC<CardListProps> = ({ cards }): ReactElement => {
+const CardListLayout: FC<CardsListComponent> = ({ cardsList }) => {
   return (
-    <div className={styles.cardsContainer}>
-      {cards.map((cards) => (
-        <Card key={cards.id} question={cards.question} answer={cards.answer} />
+    <ul className={styles.cardsContainer}>
+      {cardsList.map(({ question, answer, id }) => (
+        <li key={id}>
+          <Card question={question} answer={answer} />
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

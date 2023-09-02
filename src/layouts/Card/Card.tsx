@@ -1,10 +1,5 @@
 import { FC, useState } from 'react'
 import styles from './Card.module.css'
-import editIcon from '@images/EditButton.svg'
-// import deleteIcon from '@images/DeleteButton.svg'
-import IconButton from '../../components/IconButton/IconButton'
-// import TextInput from '../../components/TextInput/TextInput'
-// import Button from '../../components/Button/Button'
 import EditModal from './EditModal'
 import DefaultCard from './DefaultCard'
 interface CardProps {
@@ -15,35 +10,40 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ question, answer }) => {
   const [isFliped, setIsFliped] = useState<boolean>(false)
-  const [isEdited, setIsEdited] = useState<boolean>(true)
+  const [isEdited, setIsEdited] = useState<boolean>(false)
 
   const handleEdit = () => {
     setIsEdited((prev) => !prev)
     console.log('Edit Modal')
   }
-  const flip = () => {
-    setIsFliped((prev) => !prev)
+
+  const handleFlip = () => {
+    setIsFliped(!isFliped)
     console.log('is flipped')
   }
+
   return (
-    <div className={styles.card}>
+    <>
       {isEdited ? (
-        <div
-          className={`${styles.defaultCardWrapper} ${
-            isFliped ? styles.flip : ''
-          } `}
-        >
-          <DefaultCard onEditBtn={handleEdit} text={question} flip={flip} />
-          <DefaultCard onEditBtn={handleEdit} text={answer} flip={flip} />
-        </div>
+        <EditModal setIsEdited={setIsEdited} />
       ) : (
-        <div>
-          <EditModal />
-          <div className={styles.cardContent}>{question}</div>
+        <div
+          className={`${styles.card} ${isFliped ? 'flip' : ''}`}
+          onClick={handleFlip}
+        >
+          <DefaultCard
+            text={question}
+            onEditBtn={handleEdit}
+            cardSide={isFliped ? 'front' : 'back'}
+          />
+          <DefaultCard
+            text={answer}
+            onEditBtn={handleEdit}
+            cardSide={isFliped ? 'back' : 'front'}
+          />
         </div>
       )}
-    </div>
+    </>
   )
 }
-
 export default Card
